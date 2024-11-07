@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 4.3 - Обробка масиву</title>
+</head>
+<body>
+    <h2>Обробка масиву з методами</h2>
+    <script>
+        let arr = Array.from({length: 15}, () => Math.floor(Math.random() * 100) - 50);
+        document.write("Початковий масив: " + arr.join(", ") + "<br>");
+
+        let a = -10, b = 20;
+        let countInRange = arr.filter(num => num >= a && num <= b).length;
+        document.write("Кількість чисел у проміжку [" + a + "," + b + "]: " + countInRange + "<br>");
+
+        let sumOnPositions = arr.reduce((sum, val, idx) => idx % 3 === 0 ? sum + val : sum, 0);
+        document.write("Сума чисел на позиціях, кратних 3: " + sumOnPositions + "<br>");
+    </script>
+
+    <!-- Кнопка повернення на головну сторінку -->
+    <button onclick="window.location.href='index.html'">Повернутися на головну сторінку</button>
+</body>
+</html>

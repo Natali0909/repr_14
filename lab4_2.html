@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 4.2 - Маніпуляції з масивом</title>
+</head>
+<body>
+    <h2>Маніпуляції з масивом</h2>
+    <script>
+        let arr = Array.from({length: 15}, () => Math.floor(Math.random() * 100));
+        document.write("Початковий масив: " + arr.join(", ") + "<br>");
+
+        let maxIndex = arr.indexOf(Math.max(...arr));
+        [arr[maxIndex], arr[arr.length - 1]] = [arr[arr.length - 1], arr[maxIndex]];
+        document.write("З максимальним елементом, поміняним місцями з останнім: " + arr.join(", ") + "<br>");
+
+        let minIndex = arr.indexOf(Math.min(...arr));
+        if (minIndex > 0) {
+            [arr[minIndex], arr[minIndex - 1]] = [arr[minIndex - 1], arr[minIndex]];
+        }
+        document.write("З мінімальним елементом, поміняним місцями з попереднім: " + arr.join(", ") + "<br>");
+    </script>
+
+    <!-- Кнопка повернення на головну сторінку -->
+    <button onclick="window.location.href='index.html'">Повернутися на головну сторінку</button>
+</body>
+</html>

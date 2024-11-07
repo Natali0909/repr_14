@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 4.4 - Робота з масивами фруктів та цитрусів</title>
+</head>
+<body>
+    <h2>Робота з масивами фруктів та цитрусів</h2>
+    <script>
+        let fruits = ['apple', 'pineapple', 'mango', 'melon', 'grape'];
+        let citrus = ['orange', 'lemon', 'lime'];
+
+        document.write("Масив fruits: " + fruits.join(", ") + "<br>");
+        document.write("Масив citrus: " + citrus.join(", ") + "<br>");
+
+        let combinedFruits = fruits.concat(citrus);
+        document.write("Об'єднаний масив: " + combinedFruits.join(", ") + "<br>");
+
+        let fruitsWithInsertions = [...fruits];
+        fruitsWithInsertions.splice(3, 0, 'pear', 'cherry', 'plum', 'raspberry', 'strawberry');
+        document.write("Після вставки нових фруктів: " + fruitsWithInsertions.join(", ") + "<br>");
+
+        let fruitsTrimmed = [...fruits];
+        fruitsTrimmed.splice(-3, 3);
+        document.write("Без останніх трьох фруктів: " + fruitsTrimmed.join(", ") + "<br>");
+
+        document.write("Відсортований масив fruits: " + fruits.slice().sort().join(", ") + "<br>");
+        document.write("Масив fruits у зворотному алфавітному порядку: " + fruits.slice().sort().reverse().join(", ") + "<br>");
+
+        document.write("Масив fruits за довжиною слів: " + fruits.slice().sort((a, b) => a.length - b.length).join(", ") + "<br>");
+    </script>
+
+    <!-- Кнопка повернення на головну сторінку -->
+    <button onclick="window.location.href='index.html'">Повернутися на головну сторінку</button>
+</body>
+</html>
